@@ -6,4 +6,6 @@ This is Doctor -Appointment project.Here any patient can login and book an appoi
 
 https://github.com/Nitish-Kadiveti/Doctor-Appointment-N-Meet-API/assets/125491723/33ccc101-02f1-4292-8fc7-b0b5fe00200f
 
+# loud deployed version of the API endpoint
 
+https://nitish-kadiveti.github.io/Doctor-Appointment-N-Meet-API/
