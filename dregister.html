@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor Register</title>
+    <link rel="stylesheet" type="text/css" href="CSS/doctor.css" />
+    <script type="text/javascript" src="JS/doctor.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDXEdlIMa_CKDX-TuFWqDwM2Y03kzXmRI0",
+    authDomain: "doctor-meet-c0ed3.firebaseapp.com",
+    databaseURL: "https://doctor-meet-c0ed3.firebaseio.com",
+    projectId: "doctor-meet-c0ed3",
+    storageBucket: "doctor-meet-c0ed3.appspot.com",
+    messagingSenderId: "577257539779",
+    appId: "1:577257539779:web:e495eca155df4ac8a87a76",
+    measurementId: "G-M4Q0X4WWPL"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+  </head>
+  <body onload="resetSelection()">
+    <div class="head">Doctor Appointment</div>
+    <form>
+      <div class="container">
+        <p>Doctor Register</p>
+        <p>Name:<input type="text" class="inputbox" id="name" /></p>
+        <p>DOB:<input type="date" class="inputbox" id="dob" /></p>
+        <p>
+          Gender:
+          <select name="gender" id="gender" class="form-control">
+            <option value="" disabled selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
+        </p>
+        <p>Phone No.:<input type="number" class="inputbox" id="phone" /></p>
+        <p>Email ID:<input type="email" class="inputbox" id="email" /></p>
+        <p>
+          State:
+          <select
+            id="countrySelect"
+            size="1"
+            onchange="makeSubmenu(this.value)"
+          >
+            <option value="" disabled selected>Choose State</option>
+            <option>Odisha</option>
+            <option>Maharashtra</option>
+            <option>Kerala</option>
+          </select>
+        </p>
+        <p>
+          City:
+          <select id="citySelect" size="1">
+            <option value="" disabled selected>Choose City</option>
+            <option></option>
+          </select>
+        </p>
+
+        <p>
+          Clinic Name:<input type="text" class="inputbox" id="clinic" />
+        </p>
+        <p>Password:<input type="password" class="inputbox" id="password" /></p>
+        <p>
+          Re-Password:<input type="password" class="inputbox" id="repassword" />
+        </p>
+        <input type="button" value="Register" onclick="return register()"/>
+        <input type="button" value="Back" onclick="back()" />
+      </div>
+    </form>
+    <footer>
+      <p>Copyright © 2020 Doctor Inc. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
